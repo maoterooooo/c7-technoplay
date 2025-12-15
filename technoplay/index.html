@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma de formularis">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- Títol -->
+    <title>Technoplay</title>
+
+    <!-- Estils CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- CAPÇALERA (HEADER)
+         Conté el logo i el menú de navegació -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo amb imatge Aperture -->
+            <div class="logo">
+                <img src="assets/apertire.png" alt="Logo Aperture" class="logo-img" width="100px" />
+                <span class="logo-text">Sistema de Gestió d'Equips TIC</span>
+            </div>
+            <!-- Menú de navegació -->
+            <nav class="nav" id="navMenu" aria-label="Navegació">
+                <a href="#inicio" class="nav-link">Inici</a>
+                <a href="#features" class="nav-link">Formularis</a>
+                <a href="#instrucciones" class="nav-link">Instruccions</a>
+                <a href="#faqs" class="nav-link">FAQs</a>
+                <a href="#contacto" class="nav-link">Contacte</a>
+                <!-- Enllaç ràpid al manual integrat a la pàgina -->
+                <a href="#manual" class="nav-link">Manual</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- SECCIÓ HERO (Portada Principal)
+             Benvinguda i botó d'accés al primer formulari -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Sistema de Gestió d'Equips TIC</h1>
+
+                    <p class="hero-subtitle">ElectroTech - Desenvolupat per Aperture Consulting</p>
+
+                    <div class="hero-buttons">
+                        <!-- Botó primari: accés al formulari de Google -->
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvqhHnXBG6Fs8G0_fUj0umDR2jQbvhtoAqUtyV4bK4rwMGhA/viewform?usp=sharing&ouid=117063681785936411525"
+                            class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Demanar Ordinador
+                        </a>
+
+                        <!-- Botó secundari: va a la secció d'instruccions -->
+                        <button class="btn btn-secondary" id="scrollToInstrucciones" aria-label="Instruccions">
+                            <a href="#instrucciones" class="nav-link">Instruccions</a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Imatge/decoració visual -->
+                <div class="hero-image">
+                    <img src="assets/apertire.png" alt="Logo Aperture" class="logo-img" width="300px" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+<h2 style="margin-left: 130px;">Manual Usuari</h2>
+        <!-- SECCIÓ MANUAL / GUIA RÀPIDA
+             Aquesta secció inclou un índex lateral i contingut amb seccions col·lapsables.-->
+        <section id="manual" class="manual">
+            <div class="container" style="display:flex; gap:24px; align-items:flex-start;">
+
+                <!-- Contingut del manual (seccions col·lapsables) -->
+                <div style="flex:1;">
+                    <details id="m-intro" open>
+                        <summary><strong>1. Introducció al sistema</strong></summary>
+                        <h4>Què és i per què existeix</h4>
+                        <p>Aquest sistema serveix per gestionar préstecs d'equips i la notificació d'avaries
+                            Centralitza informació perquè el personal tècnic i l'administració puguin fer el seguiment
+                        </p>
+                        <h4>Qui pot utilitzar-lo</h4>
+                        <ul>
+                            <li>Alumnat i professorat: sol·licitar i retornar equips</li>
+                            <li>Personal tècnic: registrar avaries i actualitzar estats</li>
+                            <li>Administradors (ex. David): accés al Dashboard i gestió d'inventari</li>
+                        </ul>
+                        <h4>Visió general de funcionalitats</h4>
+                        <ul>
+                            <li>Formularis de préstec, retorn i notificació d'avaries</li>
+                            <li>Dashboard amb KPIs i pestanya de reparacions</li>
+                            <li>Registre d'historial i fitxes d'equip</li>
+                        </ul>
+                    </details>
+
+                    <details id="m-prests">
+                        <summary><strong>2. Guia de préstecs</strong></summary>
+                        <h4>Com sol·licitar equips (pas a pas)</h4>
+                        <ol>
+                            <li>Obre la pàgina principal i fes clic al formulari corresponent (p.ex.
+                                "SOL·LICITUDS_PRESTEC")</li>
+                            <li>Omple les dades: nom, curs, número d'inventari, data prevista de retorn</li>
+                            <li>Envia el formulari i espera la confirmació</li>
+                        </ol>
+                        <h4>Com retornar equips</h4>
+                        <p>Utilitza el formulari <em>RETORNADES</em>, indica el número d'inventari i l'estat, entrega
+                            l'equip al magatzem seguint les instruccions</p>
+                        <h4>Límits i casos especials</h4>
+                        <ul>
+                            <li>Per pèrdua o robatori: notificar a l'administrador i omplir formulari especial</li>
+                        </ul>
+                    </details>
+
+                    <details id="m-avaries">
+                        <summary><strong>3. Guia d'avaries</strong></summary>
+                        <h4>Com notificar problemes</h4>
+                        <ol>
+                            <li>A la pàgina principal feu clic a "FORMULARI DE NOTIFICACIÓ D'AVARIES"</li>
+                            <li>Indiqueu número d'inventari, descripció, i pugeu fotos si cal</li>
+                            <li>Enviat, rebreu un número de ticket per fer seguiment</li>
+                        </ol>
+                        <h4>Què esperar després</h4>
+                        <p>El personal tècnic avaluarà i assignarà prioritat. Rebreu actualitzacions sobre l'estat del
+                            ticket</p>
+                    </details>
+
+                    <details id="m-dashboard">
+                        <summary><strong>4. Dashboard (per David)</strong></summary>
+                        <h4>Com interpretar els KPIs</h4>
+                        <ul>
+                            <li><strong>Equips disponibles:</strong> unitats no prestades</li>
+                            <li><strong>Préstecs actius:</strong> equips en préstec</li>
+                            <li><strong>Tickets pendents:</strong> avaries no resoltes</li>
+                            <li><strong>Temps mitjà de reparació:</strong> temps entre notificació i resolució</li>
+                        </ul>
+                        <h4>Pestaña REPARACIONS</h4>
+                        <p>Filtra per estat, prioritat i tècnic; obre tickets per veure historial i canviar estats o
+                            assignar tècnics</p>
+                    </details>
+
+                    <details id="m-manteniment">
+                        <summary><strong>5. Manteniment del sistema</strong></summary>
+                        <h4>Com afegir nous equips</h4>
+                        <ol>
+                            <li>Accedeix amb compte administrador</li>
+                            <li>Obre la secció Inventari: Afegir equip</li>
+                            <li>Omple fitxa: nom, model, número inventari, ubicació i guardar</li>
+                        </ol>
+                        <h4>Com actualitzar dades</h4>
+                        <p>Modifica la fitxa de l'equip per canvis d'ubicació, estat o notes</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓ FORMULARIS -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Formularis</h2>
+                <p class="section-subtitle">Accedeix als formularis disponibles</p>
+                <div class="features-grid">
+                    <!-- FORMULARI 1 -->
+                    <article class="feature-card">
+                        <h3>SOL·LICITUDS PRESTEC</h3>
+                        <br>
+                        <p>Completa amb les teves dades</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvqhHnXBG6Fs8G0_fUj0umDR2jQbvhtoAqUtyV4bK4rwMGhA/viewform?usp=sharing&ouid=117063681785936411525"
+                            class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Link
+                        </a>
+                    </article>
+
+                    <!-- FORMULARI 2 -->
+                    <article class="feature-card">
+                        <h3>RETORNADES</h3>
+                        <br>
+                        <p>Respon les preguntes</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEpIWdMYOMlqIZtAMpaWA40Kr-brhDOFLEZhfuRk_6bvjfqg/viewform?usp=header"
+                            class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Link
+                        </a>
+                    </article>
+
+                    <!-- FORMULARI 3 -->
+                    <article class="feature-card">
+                        <h3>FORMULARI DE NOTIFICACIÓ D'AVARIES</h3>
+                        <p>Envia la informació</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLOp7PB2SLlW-zLQ3aDMeZoTWv52fncGh-YZEt7PU_Bxppwg/viewform?usp=header"
+                            class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Link
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓ INSTRUCCIONS:Passos per completar el procés -->
+        <section id="instrucciones" class="instructions">
+            <div class="container">
+                <h2>Instruccions per a cada Formulari</h2>
+                <ol class="steps-list">
+                    <!-- PAS 1 -->
+                    <li>
+                        <strong>SOL·LICITUDS_PRESTEC</strong>
+                        <p>Com sol·licitar un equip: <br>
+                            1. Omple el formulari de sol·licitud <br>
+                            2. Espera l'aprovació automàtica del sistema <br>
+                            3. Recull l'equip assignat al magatzem <br>
+                            4. Retorna'l abans de la data límit <br>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvqhHnXBG6Fs8G0_fUj0umDR2jQbvhtoAqUtyV4bK4rwMGhA/viewform?usp=sharing&ouid=117063681785936411525"
+                                class="button" rel="noopener noreferrer">
+                                Link
+                            </a>
+                            </button>
+                        </p>
+                    </li>
+
+                    <!-- PAS 2 -->
+                    <li>
+                        <strong>RETORNADES</strong>
+                        <p>Com retornar un equip <br>
+                            1. Omple el formulari de retornada <br>
+                            2. Indica l'estat de l'equip honestament <br>
+                            3. Lliura l'equip al magatzem <br>
+                        </p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEpIWdMYOMlqIZtAMpaWA40Kr-brhDOFLEZhfuRk_6bvjfqg/viewform?usp=header"
+                            class="button" rel="noopener norefer">
+                            Link
+                        </a>
+                    </li>
+
+                    <!-- PAS 3 -->
+                    <li>
+                        <strong>FORMULARI DE NOTIFICACIÓ D'AVARIES:</strong>
+                        <p>Com reportar un problema: <br>
+                            1. Identifica el codi de l'equip (etiqueta adhesiva) <br>
+                            2. Omple el formulari descrivint el problema <br>
+                            3. El departament IT revisarà el cas <br>
+                            4. Rebràs informació sobre la reparació <br>
+                        </p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLOp7PB2SLlW-zLQ3aDMeZoTWv52fncGh-YZEt7PU_Bxppwg/viewform?usp=header"
+                            class="button" rel="noopener noreferrer">
+                            Link
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SECCIÓ PREGUNTES FREQÜENTS (FAQs)
+             Respon dubtes comuns dels usuaris -->
+        <section id="faqs" class="faqs">
+            <div class="container">
+                <h2>Preguntes freqüents</h2>
+
+                <div class="faq-container">
+                    <!-- PREGUNTA 1 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">Quants equips puc tenir simultàniament?</summary>
+                        <div class="faq-answer">
+                            <p>Màxim 2 equips en préstec simultàniament</p>
+                        </div>
+                    </details>
+
+                    <!-- PREGUNTA 2 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">Què faig si necessito més temps?</summary>
+                        <div class="faq-answer">
+                            <p>Contacta amb david.martin@electrotech.cat per sol·licitar extensió</p>
+                        </div>
+                    </details>
+
+                    <!-- PREGUNTA 3 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">Com sé si un equip està disponible?</summary>
+                        <div class="faq-answer">
+                            <p>El sistema valida automàticament la disponibilitat quan sol·licites</p>
+                        </div>
+                    </details>
+
+                    <!-- PREGUNTA 4 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">Què passa si retorno un equip avariat?</summary>
+                        <div class="faq-answer">
+                            <p>Indica l'estat real al formulari. No hi ha penalització per danys normals d'ús</p>
+                        </div>
+                    </details>
+                </div>
+        </section>
+
+        <!-- SECCIÓ CONTACTE
+             Informació de contacte i suport -->
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>Contacte</h2>
+                <!-- CANVIAR: Títol de la secció -->
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <ul class="contact-list">
+                            <!-- Email de contacte -->
+                            <li><a href="mailto:david.martin@electrotech.cat">david.martin@electrotech.cat</a></li>
+                        </ul>
+                        <ul>
+                            <!-- Formulari de contacte de Google -->
+                            <a Responsable IT: David Martín target="_blank" rel="noopener noreferrer">Responsable IT:
+                                David Martín</a>
+                        </ul>
+                        <ul>
+                            <!-- Telefon Intern -->
+                            <a Telèfon intern: Ext. 301 target="_blank" rel="noopener noreferrer">Telèfon intern: Ext.
+                                301</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PEU DE PÀGINA -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Technoplay</h4>
+                    <ul>
+                        <li><a href="#inicio">Inici</a></li>
+                        <li><a href="#features">Formularis</a></li>
+                        <li><a href="#instrucciones">Instruccions</a></li>
+                        <li><a href="#faqs">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Aperture Consulting Sistema desenvolupat per SMIX2CT
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

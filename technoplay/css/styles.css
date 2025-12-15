@@ -1,0 +1,520 @@
+/*
+   TECHNOPLAY - CSS SIMPLE Y ORDENADO */
+
+/* 1. VARIABLES DE COLORES (Variables CSS = reutilizar valores) */
+:root {
+    /* COLORES PRINCIPALES */
+    --azul: #667eea;           /* Azul Aperture */
+    --morado: #764ba2;         /* Morado Aperture */
+    --blanco: #ffffff;         /* Fondo blanco */
+    --gris-oscuro: #333333;    /* Texto oscuro */
+    --gris-claro: #666666;     /* Texto gris */
+    --borde: #e0e0e0;          /* Color de bordes */
+    
+    /* SOMBRAS (efecto de profundidad) */
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);        /* Sombra pequeña */
+    --sombra-grande: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra grande */
+    
+    /* TIPOGRAFÍA (fuentes) */
+    --fuente: Arial, sans-serif;
+    
+    /* TAMAÑOS DE LETRA */
+    --titulo-grande: 32px;
+    --titulo-medio: 28px;
+    --titulo-pequeño: 24px;
+    --texto-normal: 16px;
+    --texto-pequeño: 14px;
+    
+    /* ESPACIADOS (márgenes y paddings) */
+    --espacio-xs: 0.5rem;      /* 8px - muy pequeño */
+    --espacio-sm: 1rem;        /* 16px - pequeño */
+    --espacio-md: 1.5rem;      /* 24px - medio */
+    --espacio-lg: 2rem;        /* 32px - grande */
+    --espacio-xl: 3rem;        /* 48px - muy grande */
+    
+    /* BORDES REDONDEADOS */
+    --radio-sm: 4px;           /* Poco redondeado */
+    --radio-md: 8px;           /* Normal */
+    --radio-lg: 12px;          /* Bastante redondeado */
+    
+    /* ANIMACIONES */
+    --transicion: all 0.3s ease;  /* Tiempo de transición suave */
+}
+
+/* 2. RESET Y ESTILOS BASE (Lo que afecta a toda la página) */
+
+* {
+    /* Quita márgenes y paddings por defecto */
+    margin: 0;
+    padding: 0;
+    /* Calcula tamaños incluyendo el borde */
+    box-sizing: border-box;
+}
+
+/* Scroll suave al hacer click en enlaces internos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos básicos del cuerpo */
+body {
+    font-family: var(--fuente);
+    font-size: var(--texto-normal);
+    line-height: 1.6;                  /* Altura de línea (espacio entre líneas) */
+    color: var(--gris-oscuro);         /* Color de texto */
+    background-color: var(--blanco);   /* Fondo blanco */
+    overflow-x: hidden;                /* No mostrar scroll horizontal */
+}
+
+/* 3. CONTENEDOR (Ancho máximo y centrado) */
+.container {
+    width: 100%;              /* Ancho completo */
+    max-width: 1200px;        /* Ancho máximo para pantallas grandes */
+    margin: 0 auto;           /* Centrar horizontalmente */
+    padding: 0 var(--espacio-md);  /* Espacio a los lados */
+}
+
+/* 4. HEADER (Cabecera con logo y menú) */
+
+.header {
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);      /* Sombra debajo del header */
+    position: sticky;               /* Se queda arriba al scroll */
+    top: 0;                         /* Desde el principio */
+    z-index: 100;                   /* Encima de todo */
+}
+
+.header .container {
+    display: flex;                  /* Alineación horizontal */
+    justify-content: space-between; /* Logo a la izq, menú a la der */
+    align-items: center;            /* Alineación vertical centrada */
+    padding: var(--espacio-sm) var(--espacio-md);
+}
+
+/* LOGO y TEXTO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-sm);
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--azul);
+}
+
+.logo-text {
+    color: var(--gris-oscuro);
+    font-weight: 700;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.nav {
+    display: flex;                  /* Alineación horizontal */
+    gap: var(--espacio-lg);         /* Espacio entre enlaces */
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;          /* Quita el subrayado */
+    color: var(--gris-oscuro);
+    font-weight: 500;
+    transition: var(--transicion);  /* Animación suave */
+    position: relative;
+}
+
+/* Efecto de subrayado al pasar el ratón */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--azul);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;                    /* Subrayado completo */
+}
+
+/* 5. SECCIÓN HERO (Portada principal) */
+
+.hero {
+    padding: var(--espacio-xl) var(--espacio-md);
+    background: linear-gradient(135deg, var(--blanco) 0%, #f8f9ff 100%); /* Gradiente suave */
+    min-height: 70vh;               /* Alto: 70% de la pantalla */
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 columnas iguales */
+    gap: var(--espacio-xl);
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;          /* Elementos apilados verticalmente */
+    gap: var(--espacio-md);
+}
+
+.hero-title {
+    font-size: var(--titulo-grande);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--azul) 0%, var(--morado) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--gris-claro);
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--espacio-md);
+    flex-wrap: wrap;                /* Los botones se ajustan en móvil */
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* 6. ESTILOS BOTONES - Dos variantes: primario (relleno) y secundario (borde) */
+
+.btn {
+    padding: var(--espacio-sm) var(--espacio-md);  /* Interior del botón */
+    border: none;                                    /* Sin borde por defecto */
+    border-radius: 8px;                             /* Esquinas redondeadas */
+    font-size: 16px;
+    font-weight: 600;                              /* Texto más grueso */
+    cursor: pointer;                                /* Muestra que es clickeable */
+    transition: all 0.3s ease;                     /* Animación suave al pasar el ratón */
+    text-decoration: none;                         /* Sin subrayado en enlaces */
+    display: inline-block;                         /* Permite padding y width */
+}
+
+.btn:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* Botón Primario (Azul-Morado con relleno) */
+.btn-primary {
+    background: linear-gradient(135deg, var(--azul) 0%, var(--morado) 100%);  /* Gradiente */
+    color: var(--blanco);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);  /* Sombra suave */
+}
+
+/* Efecto hover (cuando pasas el ratón) */
+.btn-primary:hover {
+    transform: translateY(-2px);                   /* Sube 2 píxeles */
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);  /* Sombra más grande */
+}
+
+.btn-primary:active {
+    transform: translateY(0);                      /* Vuelve a su posición original */
+}
+
+/* Botón Secundario (Solo borde, sin relleno) */
+.btn-secondary {
+    background: transparent;                       /* Sin fondo */
+    color: var(--morado);
+    border: 2px solid var(--morado);              /* Borde morado visible */
+}
+
+/* Efecto hover para botón secundario */
+.btn-secondary:hover {
+    background: var(--morado);                    /* Se rellena de morado */
+    color: var(--blanco);                         /* Texto blanco */
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);  /* Sombra morada */
+    transform: translateY(-2px);                  /* Sube 2 píxeles */
+}
+
+.btn-secondary:active {
+    transform: translateY(0);                      /* Vuelve a su posición original */
+}
+
+/* 7. SECCIÓN FEATURES / FORMULARIS (Tarjetas en 3 columnas) */
+
+.features {
+    padding: var(--espacio-xl) var(--espacio-md);
+    background: linear-gradient(135deg, #f8f9ff 0%, var(--blanco) 100%);  /* Gradiente suave */
+}
+
+.features h2 {
+    font-size: var(--titulo-grande);
+    font-weight: 700;
+    margin-bottom: var(--espacio-sm);
+    text-align: center;                           /* Centrado */
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: var(--gris-claro);
+    text-align: center;
+    margin-bottom: var(--espacio-xl);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);       /* 3 columnas iguales */
+    gap: var(--espacio-lg);                      /* Espacio entre tarjetas */
+}
+
+.feature-card {
+    background: var(--blanco);
+    padding: var(--espacio-lg);
+    border-radius: 12px;                          /* Esquinas redondeadas */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);   /* Sombra ligera */
+    transition: all 0.3s ease;                    /* Animación suave */
+}
+
+/* Efecto cuando pasas el ratón sobre una tarjeta */
+.feature-card:hover {
+    transform: translateY(-8px);                  /* Sube 8 píxeles */
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);  /* Sombra más grande */
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--espacio-md);             /* Centrado horizontalmente */
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    margin-bottom: var(--espacio-sm);
+    color: var(--gris-oscuro);
+}
+
+.feature-card p {
+    color: var(--gris-claro);
+    line-height: 1.6;
+}
+
+/* 8. SECCIÓN INSTRUCCIONES (Lista de pasos numerados) */
+
+.instructions {
+    padding: var(--espacio-xl) var(--espacio-md);
+    background: var(--blanco);
+}
+
+.instructions h2 {
+    font-size: var(--titulo-grande);
+    font-weight: 700;
+    margin-bottom: var(--espacio-sm);
+    text-align: center;
+}
+
+.steps-list {
+    max-width: 800px;
+    margin: var(--espacio-xl) auto;
+    list-style: none;
+    counter-reset: steps;                         /* Resetea el contador a 0 */
+}
+
+.steps-list li {
+    counter-increment: steps;                    /* Incrementa el contador (1, 2, 3...) */
+    margin-bottom: var(--espacio-lg);
+    padding-left: var(--espacio-xl);             /* Deja espacio para el número */
+    position: relative;
+    line-height: 1.8;
+}
+
+/* Crea círculos numerados al inicio de cada paso */
+.steps-list li::before {
+    content: counter(steps);                      /* Muestra el número del contador */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--azul), var(--morado));  /* Gradiente */
+    color: var(--blanco);
+    border-radius: 50%;                           /* Forma circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.steps-list li strong {
+    color: var(--azul);                          /* Texto importante en azul */
+}
+
+/* 9. SECCIÓN FAQs (Preguntas Frecuentes con detalles expandibles) */
+
+.faqs {
+    padding: var(--espacio-xl) var(--espacio-md);
+    background: linear-gradient(135deg, #f8f9ff 0%, var(--blanco) 100%);  /* Gradiente suave */
+}
+
+.faqs h2 {
+    font-size: var(--titulo-grande);
+    font-weight: 700;
+    margin-bottom: var(--espacio-sm);
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: var(--espacio-xl) auto;
+}
+
+.faq-item {
+    margin-bottom: var(--espacio-md);
+    background: var(--blanco);
+    border: 1px solid #e0e0e0;                    /* Borde gris claro */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);   /* Sombra ligera */
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espacio-md);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--gris-oscuro);
+    user-select: none;                            /* No se puede seleccionar el texto */
+    background: var(--blanco);
+    transition: all 0.3s ease;
+}
+
+/* Efecto cuando pasas el ratón sobre la pregunta */
+.faq-question:hover {
+    background: #f5f5f5;
+    padding-left: calc(var(--espacio-md) + 5px);  /* Pequeño movimiento visual */
+}
+/* 10. SECCIÓN CONTACTO (Información de contacto) */
+
+.contact {
+    padding: var(--espacio-xl) var(--espacio-md);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);  /* Gradiente suave */
+}
+
+.contact h2 {
+    font-size: var(--titulo-grande);
+    font-weight: 700;
+    margin-bottom: var(--espacio-sm);
+    text-align: center;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-xl);
+    max-width: 1000px;
+    margin: var(--espacio-xl) auto;
+    background: var(--blanco);
+    padding: var(--espacio-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Sombra media */
+}
+
+.contact-info h3,
+.contact-cta h3 {
+    font-size: 20px;
+    margin-bottom: var(--espacio-md);
+    color: var(--azul);
+}
+
+.contact-list {
+    list-style: none;                             /* Sin viñetas */
+}
+
+.contact-list li {
+    margin-bottom: var(--espacio-md);
+}
+
+.contact-list strong {
+    color: var(--gris-oscuro);
+}
+
+.contact-list a {
+    color: var(--azul);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto cuando pasas el ratón sobre un link */
+.contact-list a:hover {
+    text-decoration: underline;                   /* Subraya el link */
+    color: var(--morado);                        /* Cambia a morado */
+}
+
+/* 11. PIE DE PÁGINA (Footer) */
+
+.footer {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);  /* Gradiente oscuro */
+    color: #cccccc;
+    padding: var(--espacio-xl) var(--espacio-md) var(--espacio-lg);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-lg);
+    margin-bottom: var(--espacio-xl);
+}
+
+.footer-section h4 {
+    color: var(--blanco);
+    margin-bottom: var(--espacio-md);
+}
+
+.footer-section p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;                             /* Sin viñetas */
+}
+
+.footer-section li {
+    margin-bottom: var(--espacio-sm);
+}
+
+.footer-section a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto cuando pasas el ratón sobre links del footer */
+.footer-section a:hover {
+    color: var(--azul);                          /* Cambia a azul */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--espacio-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Línea divisoria suave */
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin-bottom: var(--spacing-sm);
+}
